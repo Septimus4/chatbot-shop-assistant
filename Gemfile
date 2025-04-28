@@ -64,4 +64,4 @@ end
 
 gem "devise", "~> 4.9"
 
-gem "ruby-openai", "~> 6.0"
+gem "ruby-openai", "~> 8.1"
