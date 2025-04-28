@@ -63,5 +63,6 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem "cssbundling-rails"
 
 gem "ruby-openai", "~> 6.0"

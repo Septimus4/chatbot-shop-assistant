@@ -1,24 +1,8 @@
-# README
+Setup:
+Configure env with OPENAIKEY="your key"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Load data from ext source:
+rails c
+FetchProductsJob.perform_now
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I used sqlite for database, I worked probably too much on the model/database design.
