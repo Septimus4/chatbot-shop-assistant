@@ -1,0 +1,12 @@
+<h1>Your Chats</h1>
+
+<%= link_to "Start New Chat", new_chat_path, class: "btn btn-primary" %>
+
+<ul>
+  <% @chats.each do |chat| %>
+    <li>
+      <%= link_to "Chat ##{chat.id}", chat_path(chat) %>
+      <small>(Last updated: <%= chat.updated_at.strftime("%Y-%m-%d %H:%M") %>)</small>
+    </li>
+  <% end %>
+</ul>
