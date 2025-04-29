@@ -61,11 +61,11 @@ class AiResponder
     user = chat.user
     user_context = if user
                      <<~USER.freeze
-      The user is logged in.
-      • First name: #{user.first_name}
-      • Last name: #{user.last_name}
-      • Email: #{user.email}
-    USER
+                       The user is logged in.
+                       • First name: #{user.first_name}
+                       • Last name: #{user.last_name}
+                       • Email: #{user.email}
+                     USER
                    else
                      "No user context available."
                    end
