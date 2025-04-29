@@ -1,9 +1,0 @@
-<h1>Start a New Chat</h1>
-
-<%= form_with model: @chat, url: chats_path, local: true do |form| %>
-  <div class="form-group">
-    <%= form.submit "Start Chat", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= link_to "Back to Chats", chats_path, class: "btn btn-secondary" %>

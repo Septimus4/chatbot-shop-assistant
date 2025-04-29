@@ -66,3 +66,6 @@ gem "devise", "~> 4.9"
 gem "cssbundling-rails"
 
 gem "ruby-openai", "~> 6.0"
+gem 'ruby-stemmer', '>=2.0.0', :require => 'lingua/stemmer'
+gem 'stopwords'
+gem 'redcarpet'

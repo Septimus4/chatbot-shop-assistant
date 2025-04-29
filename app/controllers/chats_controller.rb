@@ -1,33 +1,40 @@
 class ChatsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_chat, only: [:destroy]
 
   def index
     @chats = current_user.chats.order(updated_at: :desc)
-  end
 
-  def show
-    @chat = Chat.find(params[:id])
-    @messages = @chat.messages.order(created_at: :asc)
-  end
-
-  def new
-    @chat = Chat.new(user: current_user)
+    if params[:chat_id].present?
+      @chat = current_user.chats.find_by(id: params[:chat_id])
+      @messages = @chat&.messages&.order(:created_at) || []
+    else
+      @chat = nil
+      @messages = []
+    end
   end
 
   def create
     @chat = current_user.chats.build(started_at: Time.current)
 
     if @chat.save
-      respond_to do |format|
-        format.html { redirect_to chat_path(@chat), notice: "Chat started successfully." }
-        format.turbo_stream { redirect_to chat_path(@chat), notice: "Chat started successfully." }
-      end
+      redirect_to chat_path(@chat), notice: "Chat started successfully."
     else
-      puts @chat.errors.full_messages
-      respond_to do |format|
-        format.html { render :new, alert: "Failed to create chat." }
-        format.turbo_stream { render :new, status: :unprocessable_entity }
-      end
+      Rails.logger.error(@chat.errors.full_messages)
+      redirect_to chats_path, alert: "Failed to create chat."
     end
+  end
+
+  def destroy
+    @chat.destroy
+    redirect_to chats_path, notice: "Chat deleted successfully."
+  end
+
+  private
+
+  def set_chat
+    @chat = current_user.chats.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to chats_path, alert: "Chat not found."
   end
 end

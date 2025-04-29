@@ -50,7 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.5.3, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.40.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.3.5, RVM: ruby-3.3.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.2, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.5.3, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.4.3, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="date (v3.4.1, RVM: ruby-3.3.0) [gem]" level="application" />
@@ -117,17 +117,19 @@
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.13.1, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redcarpet (v3.6.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.10.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.6.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.4.1, RVM: ruby-3.3.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.75.3, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.75.4, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.44.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-performance (v1.25.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.31.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails-omakase (v1.1.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-openai (v6.5.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-stemmer (v3.0.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.4.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.31.0, RVM: ruby-3.3.0) [gem]" level="application" />
@@ -137,6 +139,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v2.6.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sshkit (v1.24.0, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, RVM: ruby-3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stopwords (v0.2, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.7, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, RVM: ruby-3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thruster (v0.1.13, RVM: ruby-3.3.0) [gem]" level="application" />
