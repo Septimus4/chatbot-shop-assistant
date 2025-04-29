@@ -1,12 +1,69 @@
-<h1>Your Chats</h1>
+<div class="row g-0">
 
-<%= link_to "Start New Chat", new_chat_path, class: "btn btn-primary" %>
+  <!-- Sidebar -->
+  <div class="col-md-4 bg-white border-end" style="height: 100vh; overflow-y: auto;">
+    <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+      <h5 class="mb-0">Your Chats</h5>
+      <%= form_with model: Chat.new, url: chats_path, local: true do |form| %>
+        <%= form.submit "+", class: "btn btn-sm btn-primary" %>
+      <% end %>
+    </div>
 
-<ul>
-  <% @chats.each do |chat| %>
-    <li>
-      <%= link_to "Chat ##{chat.id}", chat_path(chat) %>
-      <small>(Last updated: <%= chat.updated_at.strftime("%Y-%m-%d %H:%M") %>)</small>
-    </li>
-  <% end %>
-</ul>
+    <ul class="list-group list-group-flush">
+      <% @chats.each do |chat| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center <%= 'active' if chat.id == @chat&.id %>">
+          <%= link_to "Chat ##{chat.id}", chat_view_path(chat), class: "flex-grow-1 text-decoration-none text-dark" %>
+          <%= button_to "🗑️", chat_path(chat), method: :delete, data: { confirm: "Delete this chat?" }, class: "btn btn-sm btn-outline-danger ms-2" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <!-- Main Chat Area -->
+  <div class="col-md-8 d-flex flex-column" style="height: 100vh; overflow-y: hidden;">
+    <% if @chat.present? %>
+      <div class="p-4 pb-0 border-bottom">
+        <h5>Chat #<%= @chat.id %></h5>
+      </div>
+
+      <div class="flex-grow-1 overflow-auto p-3" id="chat-history" style="background-color: #f8f9fa;">
+        <% if @messages.any? %>
+          <% @messages.each do |message| %>
+            <% is_user = message.sender_type.downcase == 'user' %>
+            <div class="mb-3 <%= is_user ? 'text-end' : 'text-start' %>">
+              <div class="d-inline-block p-2 rounded <%= is_user ? 'bg-success text-white' : 'bg-white border' %>">
+                <small class="fw-bold"><%= message.sender_type.capitalize %></small><br>
+                <%= render_markdown(message.content) %>
+                <div class="small text-muted"><%= message.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="text-muted text-center my-4">No messages yet. Start the conversation!</p>
+        <% end %>
+      </div>
+
+      <div class="border-top p-3">
+        <%= form_with model: [@chat, Message.new], local: true do |form| %>
+          <div class="mb-2">
+            <%= form.text_area :content, rows: 2, class: "form-control", placeholder: "Type your message..." %>
+          </div>
+          <div class="text-end">
+            <%= form.submit "Send", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="p-5 text-center text-muted w-100">
+        <h4>Select a chat to start messaging</h4>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+    const chatHistory = document.getElementById('chat-history');
+    if (chatHistory) {
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+</script>
