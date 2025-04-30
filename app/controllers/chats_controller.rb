@@ -18,7 +18,7 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.build(started_at: Time.current)
 
     if @chat.save
-      redirect_to chat_path(@chat), notice: "Chat started successfully."
+      redirect_to chat_view_path(@chat), notice: "Chat started successfully."
     else
       Rails.logger.error(@chat.errors.full_messages)
       redirect_to chats_path, alert: "Failed to create chat."
